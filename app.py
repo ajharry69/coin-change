@@ -23,7 +23,7 @@ def get_order_packaging():
             order -= (size * count)
             if order != 0 and position == number_of_available_bags:
                 if order in permissible_increments:
-                    count += 1
+                    count += math.ceil(order)
                 else:
                     invalid_orders.add(str(o))
                     order_bags.clear()
